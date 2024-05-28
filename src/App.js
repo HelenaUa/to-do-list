@@ -1,9 +1,19 @@
 // import logo from './logo.svg';
+import React, { Suspense } from 'react';
+// import { ThemeProvider } from '@mui/material';
+// import { theme } from 'theme';
 import './App.css';
+import { AppRoutes } from './routes/AppRoutes';
 
 function App() {
   return (
-    <div>Hello word</div>
+    <>
+      <Suspense fallback={<div>...Loading</div>}>
+        <AppRoutes />
+      </Suspense>
+    </>
+
+    // <div>Hello word</div>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
