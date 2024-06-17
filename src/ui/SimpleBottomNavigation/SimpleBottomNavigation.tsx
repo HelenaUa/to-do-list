@@ -27,7 +27,7 @@ const SimpleBottomNavigation = () => {
     const currentIndex = navigationItems.findIndex(
       item => item.path === currentPath
     );
-    console.log(`Current path: ${currentPath}, Index: ${currentIndex}`);
+    // console.log(`Current path: ${currentPath}, Index: ${currentIndex}`);
     if (currentIndex !== -1) {
       setValue(currentIndex);
     }
@@ -40,7 +40,7 @@ const SimpleBottomNavigation = () => {
           showLabels
           value={value}
           onChange={(event, newValue) => {
-            console.log(`Navigating to: ${navigationItems[newValue].path}`);
+            // console.log(`Navigating to: ${navigationItems[newValue].path}`);
             setValue(newValue);
             navigate(navigationItems[newValue].path);
           }}
