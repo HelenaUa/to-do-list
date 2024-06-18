@@ -5,11 +5,12 @@ import DoneIcon from '@mui/icons-material/Done';
 
 interface IIconButtonProps {
   icon?: 'done' | 'delete';
+  onClick?: () => void;
 }
 
-const IconButton = ({ icon }: IIconButtonProps) => {
+const IconButton = ({ icon, onClick }: IIconButtonProps) => {
   return (
-    <StyledIconButton>
+    <StyledIconButton onClick={onClick}>
       {icon === 'done' ? <DoneIcon /> : <DeleteIcon />}
     </StyledIconButton>
   );
