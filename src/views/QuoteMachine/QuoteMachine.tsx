@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { StyledContainer, StyledButton } from './QuoteMachine.styled';
+import { ContentWrapper } from 'ui';
 
 interface Quote {
   text: string;
@@ -40,24 +41,26 @@ const QuoteMachine = ({ backgroundColor }: IQuoteMachineProps) => {
   };
 
   return (
-    <StyledContainer backgroundcolor={bgColor}>
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography variant="h4" align="center" gutterBottom>
-          "{quote.text}"
-        </Typography>
-        <Typography variant="h6" align="center" gutterBottom>
-          - {quote.author}
-        </Typography>
-        <Box>
-          <StyledButton onClick={fetchQuote}>New Quote</StyledButton>
+    <ContentWrapper>
+      <StyledContainer backgroundcolor={bgColor}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Typography variant="h4" align="center" gutterBottom>
+            "{quote.text}"
+          </Typography>
+          <Typography variant="h6" align="center" gutterBottom>
+            - {quote.author}
+          </Typography>
+          <Box>
+            <StyledButton onClick={fetchQuote}>New Quote</StyledButton>
+          </Box>
         </Box>
-      </Box>
-    </StyledContainer>
+      </StyledContainer>
+    </ContentWrapper>
   );
 };
 

@@ -10,6 +10,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import GradingIcon from '@mui/icons-material/Grading';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 // import { Typography } from '@mui/material';
+import { ContentWrapper } from 'ui';
 
 const navigationItems = [
   { label: 'Home', icon: <HomeIcon />, path: '/' },
@@ -37,6 +38,7 @@ const SimpleBottomNavigation = () => {
     <div>
       <Box width="100%" padding="20px">
         <BottomNavigation
+          sx={{ bgcolor: '#cfe8fc' }}
           showLabels
           value={value}
           onChange={(event, newValue) => {
