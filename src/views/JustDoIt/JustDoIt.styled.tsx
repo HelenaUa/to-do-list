@@ -9,8 +9,8 @@ export const StyledButton = styled(Button)<ButtonProps>(({ theme }) => ({
   borderRadius: '30px',
   borderTopLeftRadius: '0px',
   borderBottomLeftRadius: '0px',
-  padding: '13px 50px',
-  top: '5%',
+  padding: '16px 50px',
+  top: '2%',
   right: '0',
   zIndex: 1,
 }));
@@ -19,8 +19,10 @@ export const StyledTextField = styled(TextField)<TextFieldProps>(
   ({ theme }) => ({
     width: '100%',
     '& .MuiOutlinedInput-root': {
-      // borderRadius: '30px',
-      paddingLeft: '25px',
+      borderRadius: '30px',
+      '& input': {
+        paddingLeft: '30px',
+      },
       '& fieldset': {
         borderRadius: '30px',
       },
