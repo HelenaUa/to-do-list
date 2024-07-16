@@ -13,6 +13,10 @@ export const StyledButton = styled(Button)<ButtonProps>(({ theme }) => ({
   top: '2%',
   right: '0',
   zIndex: 1,
+
+  '&:hover, &:focus': {
+    backgroundColor: 'darkblue',
+  },
 }));
 
 export const StyledTextField = styled(TextField)<TextFieldProps>(
