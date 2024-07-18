@@ -35,6 +35,5 @@ export const StyledButton = styled(Button)<ButtonProps>(({ theme }) => ({
   zIndex: '2',
   position: 'absolute',
   bottom: '40px',
-  right: '42%',
-  // marginTop: 'px',
+  right: '39%',
 }));

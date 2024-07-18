@@ -10,7 +10,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import GradingIcon from '@mui/icons-material/Grading';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 // import { Typography } from '@mui/material';
-import { ContentWrapper } from 'ui';
+// import { ContentWrapper } from 'ui';
 
 const navigationItems = [
   { label: 'Home', icon: <HomeIcon />, path: '/' },

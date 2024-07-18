@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { StyledContainer, StyledButton } from './QuoteMachine.styled';
-import { ContentWrapper } from 'ui';
+import { Loader, ContentWrapper } from 'ui';
 
 interface Quote {
   text: string;
@@ -13,10 +13,12 @@ interface IQuoteMachineProps {
 }
 
 const QuoteMachine = ({ backgroundColor }: IQuoteMachineProps) => {
+  const [loading, setLoading] = useState<boolean>(true);
   const [quote, setQuote] = useState<Quote>({ text: '', author: '' });
   const [bgColor, setBgColor] = useState<string>('#ffffff');
 
   const fetchQuote = async () => {
+    setLoading(true);
     const response = await fetch('https://api.quotable.io/random');
     const data = await response.json();
     setQuote({
@@ -24,6 +26,7 @@ const QuoteMachine = ({ backgroundColor }: IQuoteMachineProps) => {
       author: data.author,
     });
     setBgColor(generateRandomColor());
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -42,24 +45,28 @@ const QuoteMachine = ({ backgroundColor }: IQuoteMachineProps) => {
 
   return (
     <ContentWrapper>
-      <StyledContainer backgroundcolor={bgColor}>
-        <Box
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Typography variant="h4" align="center" gutterBottom>
-            "{quote.text}"
-          </Typography>
-          <Typography variant="h6" align="center" gutterBottom>
-            - {quote.author}
-          </Typography>
-          <Box>
-            <StyledButton onClick={fetchQuote}>New Quote</StyledButton>
+      {loading ? (
+        <Loader />
+      ) : (
+        <StyledContainer backgroundcolor={bgColor}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Typography variant="h4" align="center" gutterBottom>
+              "{quote.text}"
+            </Typography>
+            <Typography variant="h6" align="center" gutterBottom>
+              - {quote.author}
+            </Typography>
+            <Box>
+              <StyledButton onClick={fetchQuote}>New Quote</StyledButton>
+            </Box>
           </Box>
-        </Box>
-      </StyledContainer>
+        </StyledContainer>
+      )}
     </ContentWrapper>
   );
 };
