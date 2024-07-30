@@ -13,9 +13,5 @@ export const StyledIconButton = styled(IconButton)<IIconButtonProps>(
     '&:hover, &:focus': {
       backgroundColor: 'darkblue',
     },
-
-    // '&:focus': {
-    //   backgroundColor: 'darkblue',
-    // },
   })
 );
