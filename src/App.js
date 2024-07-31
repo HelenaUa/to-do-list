@@ -2,18 +2,18 @@
 import React, { Suspense } from 'react';
 // import { ThemeProvider } from '@mui/material';
 // import { theme } from 'theme';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { AppRoutes } from './routes/AppRoutes';
 
 function App() {
   return (
     <>
-      <HashRouter>
+      <BrowserRouter basename="/to-do-list">
         <Suspense fallback={<div>...Loading</div>}>
           <AppRoutes />
         </Suspense>
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
