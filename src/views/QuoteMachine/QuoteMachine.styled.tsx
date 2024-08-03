@@ -1,7 +1,5 @@
 import { styled } from '@mui/material/styles';
 import Container, { ContainerProps } from '@mui/material/Container';
-// import Box, { BoxProps } from '@mui/material/Box';
-// import Typography from '@mui/material/Typography';
 import Button, { ButtonProps } from '@mui/material/Button';
 
 interface IContainerProps extends ContainerProps {
@@ -23,7 +21,6 @@ export const StyledContainer = styled(Container)<IContainerProps>(
 );
 
 export const StyledButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  // position: 'relative',
   padding: '15px 50px 15px',
   border: '2ps solid #ff0066',
   borderRadius: '30px',

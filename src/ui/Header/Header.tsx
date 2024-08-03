@@ -5,12 +5,11 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import AdbIcon from '@mui/icons-material/Adb';
-// import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import IconButton from '@mui/material/IconButton';
+import { StyledAdbIcon } from './Header.styled';
 
 const Header = () => {
   const [auth, setAuth] = useState(true);
@@ -40,21 +39,13 @@ const Header = () => {
           <Toolbar>
             <Box width="100%" display="flex" justifyContent="space-between">
               <Box display="flex" alignItems="center">
-                <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                <StyledAdbIcon />
                 <Typography
                   variant="h6"
-                  noWrap
-                  component="a"
-                  href="#app-bar-with-responsive-menu"
-                  sx={{
-                    mr: 2,
-                    display: { xs: 'none', md: 'flex' },
-                    fontFamily: 'monospace',
-                    fontWeight: 700,
-                    letterSpacing: '.3rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                  }}
+                  fontFamily="monospace"
+                  fontWeight="700"
+                  letterSpacing=".3rem"
+                  color="inherit"
                 >
                   LOGO
                 </Typography>

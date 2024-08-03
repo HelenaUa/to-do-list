@@ -13,12 +13,17 @@ interface IQuoteMachineProps {
 }
 
 const QuoteMachine = ({ backgroundColor }: IQuoteMachineProps) => {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [initialLoading, setInitialLoading] = useState<boolean>(true);
+  const [buttonLoading, setButtonLoading] = useState<boolean>(false);
   const [quote, setQuote] = useState<Quote>({ text: '', author: '' });
   const [bgColor, setBgColor] = useState<string>('#ffffff');
 
-  const fetchQuote = async () => {
-    setLoading(true);
+  const fetchQuote = async (isInitialLoad = false) => {
+    if (isInitialLoad) {
+      setInitialLoading(true);
+    } else {
+      setButtonLoading(true);
+    }
     const response = await fetch('https://api.quotable.io/random');
     const data = await response.json();
     setQuote({
@@ -26,11 +31,15 @@ const QuoteMachine = ({ backgroundColor }: IQuoteMachineProps) => {
       author: data.author,
     });
     setBgColor(generateRandomColor());
-    setLoading(false);
+    if (isInitialLoad) {
+      setInitialLoading(false);
+    } else {
+      setButtonLoading(false);
+    }
   };
 
   useEffect(() => {
-    fetchQuote();
+    fetchQuote(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -45,8 +54,8 @@ const QuoteMachine = ({ backgroundColor }: IQuoteMachineProps) => {
 
   return (
     <ContentWrapper>
-      {loading ? (
-        <Loader />
+      {initialLoading ? (
+        <Loader size={190} />
       ) : (
         <StyledContainer backgroundcolor={bgColor}>
           <Box
@@ -62,7 +71,10 @@ const QuoteMachine = ({ backgroundColor }: IQuoteMachineProps) => {
               - {quote.author}
             </Typography>
             <Box>
-              <StyledButton onClick={fetchQuote}>New Quote</StyledButton>
+              <StyledButton onClick={() => fetchQuote(false)}>
+                New Quote
+                {buttonLoading ? <Loader size={30} marginLeft="20px" /> : ''}
+              </StyledButton>
             </Box>
           </Box>
         </StyledContainer>

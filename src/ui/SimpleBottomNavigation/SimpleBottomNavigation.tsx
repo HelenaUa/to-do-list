@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-// import RestoreIcon from '@mui/icons-material/Restore';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
-// import LocationOnIcon from '@mui/icons-material/LocationOn';
 import HomeIcon from '@mui/icons-material/Home';
 import GradingIcon from '@mui/icons-material/Grading';
 import EventNoteIcon from '@mui/icons-material/EventNote';
-// import { Typography } from '@mui/material';
-// import { ContentWrapper } from 'ui';
+import { StyledBottomNavigation } from './SimpleBottomNavigation.styled';
 
 const navigationItems = [
   { label: 'Home', icon: <HomeIcon />, path: '/' },
@@ -28,7 +23,6 @@ const SimpleBottomNavigation = () => {
     const currentIndex = navigationItems.findIndex(
       item => item.path === currentPath
     );
-    // console.log(`Current path: ${currentPath}, Index: ${currentIndex}`);
     if (currentIndex !== -1) {
       setValue(currentIndex);
     }
@@ -37,12 +31,10 @@ const SimpleBottomNavigation = () => {
   return (
     <div>
       <Box width="100%" padding="20px">
-        <BottomNavigation
-          sx={{ bgcolor: '#cfe8fc' }}
+        <StyledBottomNavigation
           showLabels
           value={value}
           onChange={(event, newValue) => {
-            // console.log(`Navigating to: ${navigationItems[newValue].path}`);
             setValue(newValue);
             navigate(navigationItems[newValue].path);
           }}
@@ -54,12 +46,8 @@ const SimpleBottomNavigation = () => {
               icon={item.icon}
             />
           ))}
-        </BottomNavigation>
+        </StyledBottomNavigation>
       </Box>
-      {/* <Typography fontWeight="500" fontSize="78px">
-        Coffe
-        <span role="img">💻📝☕(❁´◡`❁)💁‍♀️💻📝☕☑</span>
-      </Typography> */}
     </div>
   );
 };

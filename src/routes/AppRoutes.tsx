@@ -26,11 +26,3 @@ export const AppRoutes = () => {
 
   return routing;
 };
-
-// Додаємо компонент MainWrapper, який містить Outlet
-// const MainWrapper = () => (
-//   <div>
-//     <div>Wrapper</div>
-//     <Outlet />
-//   </div>
-// );

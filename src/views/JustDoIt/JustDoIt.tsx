@@ -42,7 +42,7 @@ const JustDoIt = ({ text, completed }: ITask) => {
   return (
     <ContentWrapper>
       {loading ? (
-        <Loader />
+        <Loader size={190} />
       ) : (
         <Box
           width="60%"
