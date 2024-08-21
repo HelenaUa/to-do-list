@@ -9,7 +9,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import IconButton from '@mui/material/IconButton';
-import { StyledAdbIcon } from './Header.styled';
+import { StyledAppBar, StyledAdbIcon } from './Header.styled';
 
 const Header = () => {
   const [auth, setAuth] = useState(true);
@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <div>
-      <AppBar position="static">
+      <StyledAppBar position="static">
         <Container maxWidth="xl">
           <Toolbar>
             <Box width="100%" display="flex" justifyContent="space-between">
@@ -90,7 +90,7 @@ const Header = () => {
             </Box>
           </Toolbar>
         </Container>
-      </AppBar>
+      </StyledAppBar>
     </div>
   );
 };

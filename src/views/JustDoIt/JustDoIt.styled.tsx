@@ -4,18 +4,21 @@ import TextField, { TextFieldProps } from '@mui/material/TextField';
 
 export const StyledButton = styled(Button)<ButtonProps>(({ theme }) => ({
   position: 'absolute',
-  background: '#12A0DD',
-  color: '#fff',
+  background: '#c5ff41',
+  color: '#191919',
+  fontSize: '30px',
+  fontWeight: 'bold',
   borderRadius: '30px',
   borderTopLeftRadius: '0px',
   borderBottomLeftRadius: '0px',
-  padding: '16px 50px',
-  top: '2%',
+  padding: '1px 50px',
+  marginRight: '4px',
+  top: '0',
   right: '0',
   zIndex: 1,
 
   '&:hover, &:focus': {
-    backgroundColor: 'darkblue',
+    backgroundColor: '#0dcaf0',
   },
 }));
 

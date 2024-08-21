@@ -4,14 +4,15 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import DoneIcon from '@mui/icons-material/Done';
 
 interface IIconButtonProps {
-  icon?: 'done' | 'delete';
+  iconType?: 'done' | 'delete';
+  completed?: boolean;
   onClick?: () => void;
 }
 
-const IconButton = ({ icon, onClick }: IIconButtonProps) => {
+const IconButton = ({ iconType, completed, onClick }: IIconButtonProps) => {
   return (
-    <StyledIconButton onClick={onClick}>
-      {icon === 'done' ? <DoneIcon /> : <DeleteIcon />}
+    <StyledIconButton onClick={onClick} icontype={iconType} completed>
+      {iconType === 'done' ? <DoneIcon /> : <DeleteIcon />}
     </StyledIconButton>
   );
 };

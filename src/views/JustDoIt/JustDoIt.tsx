@@ -55,6 +55,7 @@ const JustDoIt = ({ text, completed }: ITask) => {
             justifyContent="center"
             alignItems="center"
             variant="h1"
+            color="#fff"
           >
             Just do it
           </Typography>
@@ -94,11 +95,12 @@ const JustDoIt = ({ text, completed }: ITask) => {
                 </Typography>
                 <Box display="flex" gap="5px" marginLeft="15px">
                   <IconButton
-                    icon="done"
+                    iconType="done"
+                    completed={task.completed}
                     onClick={() => handleToggleComplete(index)}
                   />
                   <IconButton
-                    icon="delete"
+                    iconType="delete"
                     onClick={() => handleDeleteTask(index)}
                   />
                 </Box>

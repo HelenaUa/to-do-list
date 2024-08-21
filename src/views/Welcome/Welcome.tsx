@@ -27,7 +27,9 @@ const Welcome = () => {
           alignItems="center"
           gap="20px"
         >
-          <Typography variant="h1">Welcome to the home page!</Typography>
+          <Typography variant="h1" color="#fff">
+            Welcome to the home page!
+          </Typography>
           <Box component="img" alt="Home" src={HomeImage} />
         </Box>
       )}

@@ -5,7 +5,10 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
 import GradingIcon from '@mui/icons-material/Grading';
 import EventNoteIcon from '@mui/icons-material/EventNote';
-import { StyledBottomNavigation } from './SimpleBottomNavigation.styled';
+import {
+  StyledBottomNavigation,
+  StyledBottomNavigationAction,
+} from './SimpleBottomNavigation.styled';
 
 const navigationItems = [
   { label: 'Home', icon: <HomeIcon />, path: '/' },
@@ -40,7 +43,7 @@ const SimpleBottomNavigation = () => {
           }}
         >
           {navigationItems.map((item, index) => (
-            <BottomNavigationAction
+            <StyledBottomNavigationAction
               key={index}
               label={item.label}
               icon={item.icon}
