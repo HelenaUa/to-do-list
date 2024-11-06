@@ -24,11 +24,11 @@ const QuoteMachine = ({ backgroundColor }: IQuoteMachineProps) => {
     } else {
       setButtonLoading(true);
     }
-    const response = await fetch('https://api.quotable.io/random');
+    const response = await fetch('https://zenquotes.io/api/random');
     const data = await response.json();
     setQuote({
-      text: data.content,
-      author: data.author,
+      text: data[0].q,
+      author: data[0].a,
     });
     setBgColor(generateRandomColor());
     if (isInitialLoad) {

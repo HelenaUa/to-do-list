@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
 import GradingIcon from '@mui/icons-material/Grading';
 import EventNoteIcon from '@mui/icons-material/EventNote';
@@ -33,7 +32,7 @@ const SimpleBottomNavigation = () => {
 
   return (
     <div>
-      <Box width="100%" padding="20px">
+      <Box width="100%" padding="20px 0px">
         <StyledBottomNavigation
           showLabels
           value={value}
