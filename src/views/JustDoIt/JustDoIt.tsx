@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
-import { StyledButton, StyledTextField } from './JustDoIt.styled';
+import {
+  StyledButton,
+  StyledTextField,
+  StyledTypography,
+} from './JustDoIt.styled';
 import { Loader, ContentWrapper, IconButton } from 'ui';
 
 interface ITask {
@@ -45,21 +49,15 @@ const JustDoIt = ({ text, completed }: ITask) => {
         <Loader size={190} />
       ) : (
         <Box
-          width="60%"
+          width="100%"
+          height="100vh"
+          bgcolor="#898a8a"
           display="flex"
           flexDirection="column"
-          margin="50px auto"
+          padding="0px"
         >
-          <Typography
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            variant="h1"
-            color="#fff"
-          >
-            Just do it
-          </Typography>
-          <Box position="relative" marginBottom="50px">
+          <StyledTypography variant="h1">Just do it</StyledTypography>
+          <Box position="relative" margin="0px 50px 50px 50px">
             <StyledTextField
               placeholder="Add a task"
               value={task}
@@ -69,10 +67,11 @@ const JustDoIt = ({ text, completed }: ITask) => {
           </Box>
           {tasks.map((task, index) => (
             <Box
+              bgcolor="#898a8a"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              margin="10px 0"
+              padding="10px 0px"
               key={index}
             >
               <Box

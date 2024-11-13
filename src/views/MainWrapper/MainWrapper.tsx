@@ -5,7 +5,7 @@ import { Header, SimpleBottomNavigation } from 'ui';
 
 const MainWrapper = () => {
   return (
-    <Box bgcolor="#898a8a">
+    <Box bgcolor="#898a8a" width="100%" padding="0px">
       <Header />
       <SimpleBottomNavigation />
       <Outlet />
